@@ -1,0 +1,94 @@
+
+// import React, { useState } from 'react';
+// import emailjs from 'emailjs-com';
+// import Modal from '../components/Model';
+
+// const Contact = () => {
+// 	const [isFormVisible, setIsFormVisible] = useState(true);
+// 	const [isModalVisible, setIsModalVisible] = useState(false);
+
+// 	const [email, setEmail] = useState('');
+// 	const [message, setMessage] = useState('');
+
+// 	const sendEmail = async () => {
+// 		try {
+// 			const templateParams = {
+// 				email,
+// 				message,
+// 			};
+
+// 			const response = await emailjs.send(
+// 				'service_uod8b97',
+// 				'template_amufo22',
+// 				templateParams,
+// 				'keAW5fe8eZKnbgpAB'
+// 			);
+
+// 			console.log('Email sent successfully', response);
+// 		} catch (error) {
+// 			console.error('Failed to send email', error);
+// 		}
+// 	};
+
+// 	const handleSubmit = async (e) => {
+// 		e.preventDefault();
+// 		sendEmail();
+
+// 		// Hide the form and show the modal
+// 		setIsFormVisible(false);
+// 		setIsModalVisible(true);
+
+// 		// After 5 seconds, reset the form and hide the modal
+// 		setTimeout(() => {
+// 			setIsFormVisible(true);
+// 			setIsModalVisible(false);
+// 		}, 5000);
+// 	};
+
+// 	return (
+// 		<>
+// 			<section className="h-screen my-16">
+// 				<div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md tracking-widest">
+// 					<h1 className="text-center text-[1.5em] md:text-3xl my-10 text-white">Contact Us</h1>
+// 					{isFormVisible && (
+// 						<form action="#" className="space-y-8 px-5" onSubmit={handleSubmit}>
+// 							<div>
+// 								<label for="email" className="block mb-2 text-sm  text-gray-300">Your email</label>
+// 								<input
+// 									type="email"
+// 									id="email"
+// 									name="email"
+// 									value={email}
+// 									onChange={(e) => setEmail(e.target.value)}
+// 									placeholder="name@example.com"
+// 									className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:bg-gray-500 focus:border-primary-500 block w-full p-2.5 focus:placeholder-transparent dark:border-gray-600 dark:placeholder-gray-500 dark:focus:bg-gray-500 dark:focus:border-primary-500 dark:light"
+// 								/>
+
+// 							</div>
+// 							<div>
+// 								<label for="subject" className="block mb-2 text-sm  text-gray-300">Subject</label>
+// 								<input type="text" id="subject" placeholder="Let us know how I can help you" name="subject" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:bg-gray-500 focus:border-primary-500 block w-full p-2.5 focus:placeholder-transparent dark:border-gray-600 dark:placeholder-gray-500 dark:focus:bg-gray-500 dark:focus:border-primary-500 dark:light" required />
+// 							</div>
+// 							<div className="sm:col-span-2">
+// 								<label for="message" className="block mb-2 text-sm  text-gray-300">Your message</label>
+// 								<textarea
+// 									id="message"
+// 									name="message"
+// 									rows="6"
+// 									value={message}
+// 									onChange={(e) => setMessage(e.target.value)}
+// 									className="block p-2.5 focus:placeholder-transparent w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:bg-gray-500 focus:border-primary-500 dark:border-gray-600 dark:placeholder-gray-500 dark:focus:bg-gray-500 dark:focus:border-primary-500"
+// 									placeholder="Leave a comment..." />
+// 							</div>
+// 							<button type="submit" className="inline-flex items-center justify-center py-2 px-2 w-32 md:px-5 md:w-44 md:py-3 text-base md: md:text-sm text-center tracking-wider bg-gray-200 text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-2 focus:ring-gray-100 ">Send message</button>
+// 						</form>
+// 					)}
+// 				</div>
+// 			</section>
+// 			<Modal isVisible={isModalVisible} />
+// 		</>
+// 	)
+// };
+
+// export default Contact;
+
